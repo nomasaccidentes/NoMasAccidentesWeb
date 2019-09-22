@@ -28,6 +28,7 @@ export class LoginComponent {
       this.router.navigate(['/dashboard']);
       this.isUserLoggedIn = true;
       alert("Bienvenido " + data.data.usuario_username);
+      window.location.reload();
     },
     error => {
       alert(error.error.data);

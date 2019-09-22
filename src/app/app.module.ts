@@ -10,15 +10,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LoginGuard } from './login.guard';
-import { NoLoginGuard } from './no-login.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginGuard } from './guard/login.guard';
+import { NoLoginGuard } from './guard/no-login.guard';
+import { AppheaderComponent } from './appheader/appheader.component';
+import { AppmenuComponent } from './appmenu/appmenu.component';
+import { AppfooterComponent } from './appfooter/appfooter.component';
+import { CapacitacionComponent } from './components/capacitacion/capacitacion.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    AppheaderComponent,
+    AppmenuComponent,
+    AppfooterComponent,
+    CapacitacionComponent
   ],
   imports: [
     BrowserModule,

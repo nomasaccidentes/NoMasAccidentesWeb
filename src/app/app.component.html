@@ -1,3 +1,7 @@
+<app-appheader *ngIf="username"></app-appheader>
+<app-appmenu *ngIf="username"></app-appmenu> 
+<router-outlet></router-outlet>
 
-  <router-outlet>
-  </router-outlet>
+<app-appfooter *ngIf="username"></app-appfooter>
+
+
