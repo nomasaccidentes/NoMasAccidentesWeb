@@ -10,10 +10,7 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent {
 
-  private isUserLoggedIn;
-
   constructor(private _loginService: LoginService, private router:Router) {
-    
    }
   username:string= "";
   clave:string= "";
@@ -26,7 +23,6 @@ export class LoginComponent {
 
       localStorage.setItem('username', data.data.usuario_username);
       this.router.navigate(['/dashboard']);
-      this.isUserLoggedIn = true;
       alert("Bienvenido " + data.data.usuario_username);
       window.location.reload();
     },

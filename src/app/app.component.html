@@ -1,7 +1,8 @@
-<app-appheader *ngIf="username"></app-appheader>
-<app-appmenu *ngIf="username"></app-appmenu> 
-<router-outlet></router-outlet>
+<app-appheader  *ngIf="username != null"></app-appheader>
+<app-appmenu  *ngIf="username != null" ></app-appmenu> 
+<router-outlet>
+</router-outlet>
 
-<app-appfooter *ngIf="username"></app-appfooter>
+<app-appfooter *ngIf="username != null"></app-appfooter>
 
 
