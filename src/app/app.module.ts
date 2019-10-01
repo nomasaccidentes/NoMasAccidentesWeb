@@ -17,6 +17,9 @@ import { AppheaderComponent } from './appheader/appheader.component';
 import { AppmenuComponent } from './appmenu/appmenu.component';
 import { AppfooterComponent } from './appfooter/appfooter.component';
 import { CapacitacionComponent } from './components/capacitacion/capacitacion.component';
+import { AsesoriasComponent } from './components/asesorias/asesorias.component';
+import { MisServiciosComponent } from './components/mis-servicios/mis-servicios.component';
+import { MiContratoComponent } from './components/mi-contrato/mi-contrato.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { CapacitacionComponent } from './components/capacitacion/capacitacion.co
     AppheaderComponent,
     AppmenuComponent,
     AppfooterComponent,
-    CapacitacionComponent
+    CapacitacionComponent,
+    AsesoriasComponent,
+    MisServiciosComponent,
+    MiContratoComponent
   ],
   imports: [
     BrowserModule,

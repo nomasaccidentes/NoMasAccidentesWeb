@@ -4,11 +4,17 @@ import { DashboardComponent } from "../app/components/dashboard/dashboard.compon
 import { LoginGuard } from './guard/login.guard';
 import { NoLoginGuard } from './guard/no-login.guard';
 import {  CapacitacionComponent } from "../app/components/capacitacion/capacitacion.component";
+import { MisServiciosComponent } from "../app/components/mis-servicios/mis-servicios.component";
+import { AsesoriasComponent } from "../app/components/asesorias/asesorias.component";
+import { MiContratoComponent } from "../app/components/mi-contrato/mi-contrato.component";
 
 export const ROUTES: Routes = [
     { path: 'login', component: LoginComponent , canActivate:[NoLoginGuard]},
     { path: 'dashboard', component:  DashboardComponent, canActivate:[LoginGuard] },
     { path: 'capacitacion', component:  CapacitacionComponent, canActivate:[LoginGuard] },
+    { path: 'mis-servicios', component:  MisServiciosComponent, canActivate:[LoginGuard] },
+    { path: 'asesorias', component:  AsesoriasComponent, canActivate:[LoginGuard] },
+    { path: 'mi-contrato', component:  MiContratoComponent, canActivate:[LoginGuard] },
     { path: '', pathMatch: 'full', redirectTo: 'login' ,canActivate:[NoLoginGuard]},
     { path: '**', pathMatch: 'full', redirectTo: 'login' ,canActivate:[NoLoginGuard]}
 
