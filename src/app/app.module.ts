@@ -20,6 +20,9 @@ import { CapacitacionComponent } from './components/capacitacion/capacitacion.co
 import { AsesoriasComponent } from './components/asesorias/asesorias.component';
 import { MisServiciosComponent } from './components/mis-servicios/mis-servicios.component';
 import { MiContratoComponent } from './components/mi-contrato/mi-contrato.component';
+import { MisSolicitudesComponent } from './components/mis-solicitudes/mis-solicitudes.component';
+import { SolicitudAsesoriaComponent } from './components/solicitud-asesoria/solicitud-asesoria.component';
+import { SolicitudCapacitacionComponent } from './components/solicitud-capacitacion/solicitud-capacitacion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,10 @@ import { MiContratoComponent } from './components/mi-contrato/mi-contrato.compon
     CapacitacionComponent,
     AsesoriasComponent,
     MisServiciosComponent,
-    MiContratoComponent
+    MiContratoComponent,
+    MisSolicitudesComponent,
+    SolicitudAsesoriaComponent,
+    SolicitudCapacitacionComponent
   ],
   imports: [
     BrowserModule,

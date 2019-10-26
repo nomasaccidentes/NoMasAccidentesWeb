@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../../services/cliente.service';
+import { Contrato } from '../../contrato';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,14 +8,14 @@ import { ClienteService } from '../../services/cliente.service';
 })
 export class DashboardComponent implements OnInit {
 
-  contrato:any;
+  contrato:Contrato;
   constructor(private clienteService:ClienteService) {
 
     
     
     clienteService.getContratoByClienteId(parseInt(localStorage.getItem('cliente')))
       .subscribe(data=> {
-        console.log(data);
+        console.log(data[0].CANT_ASESORIA);
         this.contrato = data[0];
       });
 

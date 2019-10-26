@@ -7,6 +7,8 @@ import {  CapacitacionComponent } from "../app/components/capacitacion/capacitac
 import { MisServiciosComponent } from "../app/components/mis-servicios/mis-servicios.component";
 import { AsesoriasComponent } from "../app/components/asesorias/asesorias.component";
 import { MiContratoComponent } from "../app/components/mi-contrato/mi-contrato.component";
+import { SolicitudCapacitacionComponent } from "../app/components/solicitud-capacitacion/solicitud-capacitacion.component";
+import { SolicitudAsesoriaComponent } from "../app/components/solicitud-asesoria/solicitud-asesoria.component";
 
 export const ROUTES: Routes = [
     { path: 'login', component: LoginComponent , canActivate:[NoLoginGuard]},
@@ -15,6 +17,8 @@ export const ROUTES: Routes = [
     { path: 'mis-servicios', component:  MisServiciosComponent, canActivate:[LoginGuard] },
     { path: 'asesorias', component:  AsesoriasComponent, canActivate:[LoginGuard] },
     { path: 'mi-contrato', component:  MiContratoComponent, canActivate:[LoginGuard] },
+    { path: 'solicitudCapacitacion', component:  SolicitudCapacitacionComponent, canActivate:[LoginGuard] },    
+    { path: 'solicitudAsesoria', component:  SolicitudAsesoriaComponent, canActivate:[LoginGuard] },    
     { path: '', pathMatch: 'full', redirectTo: 'login' ,canActivate:[NoLoginGuard]},
     { path: '**', pathMatch: 'full', redirectTo: 'login' ,canActivate:[NoLoginGuard]}
 

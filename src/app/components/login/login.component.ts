@@ -20,12 +20,12 @@ export class LoginComponent {
 
     this._loginService.login(this.login).subscribe(
       data => {
-
       if( data.data.cliente === null){
         alert("Apliación Incorrecta");
       }else{
         localStorage.setItem('username', data.data.usuario_username);
         localStorage.setItem('cliente', data.data.cliente.cliente_id);
+        localStorage.setItem('contrato', data.data.contrato.contrato_id);
         this.router.navigate(['/dashboard']);
         alert("Bienvenido " + data.data.usuario_username);
         window.location.reload();

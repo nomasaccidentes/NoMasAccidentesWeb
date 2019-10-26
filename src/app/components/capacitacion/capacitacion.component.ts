@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-capacitacion',
   templateUrl: './capacitacion.component.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CapacitacionComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+  elevarSolicitud(){
+    
   }
 
 }

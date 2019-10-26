@@ -1,0 +1,68 @@
+<div class="content-wrapper" style="min-height: 426.282px;">
+        <section class="content">
+                <div class="container-fluid">
+                        <h3 class="text-center">Solicitudes</h3>
+                        <div class="row">
+                                <div class="col-md-6" id="collapseAsesoria">
+                                        <h4>Solicitud Asesoria</h4>
+                                        <form action="" #asesoriaForm="ngForm" (ngSubmit)="onSubmitAsesoria()">
+                                                <div class="form-group">
+                                                        <label for="exampleFormControlTextarea1">Solicitud
+                                                                Descripción</label>
+                                                        <textarea class="form-control"
+                                                                [(ngModel)]="asesoria.solicitudAsesoriaDescripcion"
+                                                                name="txtDescripcion" id="exampleFormControlTextarea1"
+                                                                rows="3"></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <label for="solicitudFecha">Fecha Visita</label>
+                                                        <input type="date" name="txtFechaVisita" id="txtFechaVisita"
+                                                                [(ngModel)]="asesoria.solicitudFechaAsesoria"
+                                                                class="form-control" value="now()">
+                                                </div>
+
+                                                <div class="form-group">
+                                                        <input type="submit" value="Enviar Solicitud"
+                                                                class="btn btn-success">
+                                                </div>
+                                        </form>
+                                </div>
+                                <div class="col-md-6 collapse" id="collapseCapacitacion">
+                                        <h4>Solicitud capacitacion</h4>
+                                </div>
+
+                        </div>
+
+                        <div class="row mt-5">
+                                <div class="col-md-8">
+                                        <table class="table">
+                                                <thead>
+                                                        <tr>
+                                                                <th scope="col">Solicitud ID</th>
+                                                                <th scope="col">Descripción</th>
+                                                                <th scope="col">Estado</th>
+                                                                <th scope="col">Fecha Solicitada</th>
+                                                                <th scope="col">Desc. Resolución</th>
+                                                                <th scope="col">Fecha Resolución</th>
+                                                        </tr>
+                                                </thead>
+                                                <tbody>
+                                                        <tr *ngFor="let sol of solicitudes">
+                                                                <td>{{sol.SOLICITUD_ASESORIA_ID}}</td>
+                                                                <td>{{sol.SOLICITUD_ASESORIA_DESCRIPCION}}</td>
+                                                                <td>{{sol.ESTADO_SOLICITUD_NOMBRE}}</td>
+                                                                <td>{{sol.SOLICITUD_FECHA_ASESORIA | date:'dd-MM-yyyy'}}
+                                                                </td>
+                                                                <td>{{sol.SOLICITUD_RESOLUCION}}</td>
+                                                                <td>{{sol.SOLICITUD_RESOLUCION_FECHA}}</td>
+                                                        </tr>
+                                                </tbody>
+                                        </table>
+                                </div>
+                        </div>
+                </div>
+
+
+        </section>
+</div>

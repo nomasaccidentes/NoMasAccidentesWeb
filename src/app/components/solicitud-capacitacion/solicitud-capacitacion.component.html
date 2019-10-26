@@ -1,0 +1,72 @@
+<div class="content-wrapper" style="min-height: 426.282px;">
+    <section class="content">
+        <div class="container-fluid">
+            <br>
+            <br>
+            <h3>Solicitud Capacitación</h3>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Ingrese su solicitud</h3>
+                        </div>
+                        <form action="" #capacitacionForm="ngForm" (ngSubmit)="onSubmitCapacitacion()" role="form">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Descripción Capacitación</label>
+                                    <textarea name="txtDescripcion" id="exampleInputEmail1" cols="10"  [(ngModel)]="capacitacion.solicitudCapacitacionDescripcion" class="form-control" rows="5"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Fecha</label>
+                                    <input type="date" class="form-control" id="exampleInputPassword1"
+                                        placeholder="Password"  name="txtFechaCapacitacion" [(ngModel)]="capacitacion.solicitudFechaCapacitacion">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+
+            <h3>Mis solicitudes</h3>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Solicitud ID</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Fecha Solicitada</th>
+                                <th scope="col">Estado Solicitud</th>
+                                <th scope="col">Resolución</th>
+                                <th scope="col">Resolución Fecha</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cap of capacitaciones">
+                           
+                                <td>{{cap.SOLICITUD_CAPACITACION_ID}}</td>
+                                <td>{{cap.SOLICITUD_CAPACITACION_DESC}}</td>
+                                <td>{{cap.SOLICITUD_FECHA_CAPACITACION | date:'dd-MM-yyyy'}}</td>
+                                <td>{{cap.ESTADO_SOLICITUD_NOMBRE}}</td>
+
+                                <td>{{cap.SOLICITUD_RESOLUCION}}</td>
+                                <td>{{cap.SOLICITUD_RESOLUCION_FECHA}}</td>
+                                
+                            </tr>
+                        </tbody>
+                        </table>
+                              
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
