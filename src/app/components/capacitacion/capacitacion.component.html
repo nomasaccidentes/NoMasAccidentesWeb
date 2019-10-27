@@ -1,31 +1,38 @@
-<div class="content-wrapper" style="min-height: 1009.81px;">
-        <section class="content">
-                <div class="container-fluid">
-                        <h3 class="text-center">Solicitud de Capacitacion</h3>
-                        <small>Por favor ingrese la fecha estimativa de capacitación</small>
+<div class="content-wrapper" style="min-height: 426.282px;">
+    <section class="content">
+        <div class="container-fluid">
+            <br>
+            <br>
+            <h3>Mis Capacitación</h3>
+        </div>
 
+        <div class="row">
+        <div class="col-md-2">  </div>
 
-                        <form action="" #solicitudForm="ngForm" (ngSubmit)="elevarSolicitud()" >
-                                <div class="form-group row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Fecha Tentativa</label>
-                                        <div class="col-sm-4">
-                                                <input type="date" [(ngModel)]="solicitudCapacitacion.fecha" class="form-control" id="inputPassword" placeholder="Password">
-                                        </div>
-                                </div>
-                                <div class="form-group row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Descripción</label>
-                                        <div class="col-sm-4">
-                                                <textarea name="descripcionSolicitud" [(ngModel)]="solicitudCapacitacion.descripcion" class="form-control" id="" cols="30" rows="10"></textarea>
-                                        </div>
-                                </div>
-                                <div class="form-group row">
-                                        <div class="col-sm-4">
-                                                <input type="submit" class="btn btn-success" value="Enviar Solicitud">
-                                        </div>
-                                </div>
-                        </form>
-                </div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Capacitation ID</th>
+                        <th scope="col">Detalle</th>
+                        <th scope="col">Fecha capacitacion</th>
+                        <th scope="col">Profesional Asignado</th>
+                        <th scope="col">Detalle</th>
 
-                {{solicitudCapacitacion | json}}
-        </section>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cap of capacitacion">
+                   
+                        <td>{{cap.CAPACITACION_ID}}</td>
+                        <td>{{cap.CAPACITACION_DETALLE}}</td>
+                        <td>{{cap.CAPACITACION_FECHA | date:'dd-MM-yyyy'}}</td>
+                        <td>{{cap.PROFESIONAL}}</td>
+                        <td><a routerLink="capacitacionDetalle/{{cap.CAPACITACION_ID}}">Ver detalle</a></td>
+                    </tr>
+                </tbody>
+                </table>
+        </div>
+        </div>
+    </section>
 </div>

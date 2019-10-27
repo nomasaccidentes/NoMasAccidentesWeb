@@ -23,6 +23,7 @@ import { MiContratoComponent } from './components/mi-contrato/mi-contrato.compon
 import { MisSolicitudesComponent } from './components/mis-solicitudes/mis-solicitudes.component';
 import { SolicitudAsesoriaComponent } from './components/solicitud-asesoria/solicitud-asesoria.component';
 import { SolicitudCapacitacionComponent } from './components/solicitud-capacitacion/solicitud-capacitacion.component';
+import { CapacitacionDetalleComponent } from './components/capacitacion-detalle/capacitacion-detalle.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { SolicitudCapacitacionComponent } from './components/solicitud-capacitac
     MiContratoComponent,
     MisSolicitudesComponent,
     SolicitudAsesoriaComponent,
-    SolicitudCapacitacionComponent
+    SolicitudCapacitacionComponent,
+    CapacitacionDetalleComponent
   ],
   imports: [
     BrowserModule,
