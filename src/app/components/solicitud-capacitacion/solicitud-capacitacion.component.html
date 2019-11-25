@@ -5,8 +5,8 @@
             <br>
             <h3>Solicitud Capacitación</h3>
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
+                <div class="col-lg-3 col-md-12"></div>
+                <div class=" col-lg-6 col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Ingrese su solicitud</h3>
@@ -35,38 +35,48 @@
             <br>
 
             <h3>Mis solicitudes</h3>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <table class="table">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">Solicitud ID</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Fecha Solicitada</th>
-                                <th scope="col">Estado Solicitud</th>
-                                <th scope="col">Resolución</th>
-                                <th scope="col">Resolución Fecha</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let cap of capacitaciones">
-                           
-                                <td>{{cap.SOLICITUD_CAPACITACION_ID}}</td>
-                                <td>{{cap.SOLICITUD_CAPACITACION_DESC}}</td>
-                                <td>{{cap.SOLICITUD_FECHA_CAPACITACION | date:'dd-MM-yyyy'}}</td>
-                                <td>{{cap.ESTADO_SOLICITUD_NOMBRE}}</td>
-
-                                <td>{{cap.SOLICITUD_RESOLUCION}}</td>
-                                <td>{{cap.SOLICITUD_RESOLUCION_FECHA | date:'dd-MM-yyyy'}}</td>
+            <div class="row mt-5">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+    
+                                Solicitudes</h3>
                                 
-                            </tr>
-                        </tbody>
-                        </table>
-                              
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                            <th scope="col">Solicitud ID</th>
+                                            <th scope="col">Descripcion</th>
+                                            <th scope="col">Fecha Solicitada</th>
+                                            <th scope="col">Estado Solicitud</th>
+                                            <th scope="col">Resolución</th>
+                                            <th scope="col">Resolución Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let cap of capacitaciones">
+                        
+                                        <td>{{cap.SOLICITUD_CAPACITACION_ID}}</td>
+                                        <td>{{cap.SOLICITUD_CAPACITACION_DESC}}</td>
+                                        <td>{{cap.SOLICITUD_FECHA_CAPACITACION | date:'dd-MM-yyyy'}}</td>
+                                        <td>{{cap.ESTADO_SOLICITUD_NOMBRE}}</td>
+        
+                                        <td>{{cap.SOLICITUD_RESOLUCION}}</td>
+                                        <td>{{cap.SOLICITUD_RESOLUCION_FECHA | date:'dd-MM-yyyy'}}</td>
+                                            
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
         </div>
     </section>
 </div>

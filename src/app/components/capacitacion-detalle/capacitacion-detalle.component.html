@@ -1,12 +1,108 @@
 <div class="content-wrapper" style="min-height: 426.282px;">
     <section class="content">
         <div class="container-fluid">
-            <h3>Detalle Capacitacion {{capacitacion_id}}</h3>
-            <div class="row">
+            <h3>Detalle Capacitacion Id : {{capacitacion_id}}</h3>
+            <br>
 
+            <div *ngIf="ifDatos">
+                <h4>En esta sección podrás pasar lista de los asistentes</h4>
+                <small>.</small>
             </div>
 
-        </div>
+            <div *ngIf="!ifDatos">
+                    <h4>En esta sección podrás agregar a los partcipantes de la capacitación</h4>
+                    <small>* Recuerda que solo se pueden agregar 1 vez.</small>
+            </div>
+           
 
+            <br>
+          
+            <div class="row">
+                <div class="col-md-2"></div>
+
+                <div class="col-md-8">
+
+                    <form role="form" action="" #detalleCapacitacionEdit="ngForm" (ngSubmit)="pasaListaParticipantes()" *ngIf="ifDatos">
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre Participante</th>
+                                        <th>Correo Participante</th>                                     
+                                        <th>Asiste</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let det of detalleCapacitacion;let i = index;">
+                                        <td>
+                                            {{i}}
+                                            {{det.CAPACITACION_CORREO}}
+                                           <!-- <input type="text" disabled value={{det.CAPACITACION_PARTICIPANTE}} class="form-control"> -->
+                                           <input type="text" [(ngModel)]="detalleCapacitacionEdit[i]" value="" name="capacitacionParticipante{{i}}">
+                                        </td>
+                                        <td>
+                                                {{i}}
+                                            <input type="text" disabled value={{det.CAPACITACION_CORREO}} class="form-control">
+                                            <input hidden [(ngModel)]="detalleCapacitacionEdit[i]" class="form-control" type="text" name="detalleCapacitacionEdit[i].capacitacionCorreo" />
+                                        </td>
+                                        <td>
+                                                {{i}}
+                                            <input type="checkbox" value={{det.CAPACITACION_ASISTE}} [(ngModel)]="detalleCapacitacionEdit.asiste" name="detalleCapacitacionEdit[i].asiste" class="form-control">
+                                            <input type="hidden" value={{det.CAPACITACION_DETALLE_ID}} name="" class="form-control">
+                                            <!-- <input hidden [(ngModel)]="field.correo" class="form-control" type="text" name="{{field.correo}}" /> -->
+                                        <!-- </td> -->
+                                        <td>
+                                            <button class="btn btn-danger"  type="button" (click)="deleteFieldValue(i)">-</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-grpup">
+                                    <input type="submit" class="btn btn-primary" value="Finalizar">
+                            </div>
+                    </form>
+
+
+                    <form role="form" action="" #detalleCapacitacion="ngForm" (ngSubmit)="agregarParticipantes()" *ngIf="!ifDatos">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nombre Participante</th>
+                                    <th>Correo Participante</th>                                     
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let field of fieldArray; let i = index">
+                                        <td>
+                                            <input [(ngModel)]="field.nombre" class="form-control" type="text" name="{{field.nombre}}" />
+                                        </td>
+                                        <td>
+                                            <input [(ngModel)]="field.correo" class="form-control" type="text" name="{{field.correo}}" />
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger"  type="button" (click)="deleteFieldValue(i)">-</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="form-control" type="text" id="newAttributeCode" [(ngModel)]="newAttribute.nombre" name="newAttributeCode" />
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.correo" name="newAttributeName" />
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success" type="button" (click)="addFieldValue()"> +</button>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="form-grpup">
+                            <input type="submit" class="btn btn-primary" value="Agregar Participantes">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 </div>

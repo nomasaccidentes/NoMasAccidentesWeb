@@ -35,7 +35,50 @@
             <br>
             <br>
             <h3>Mis Solicitudes</h3>
+            
+
             <div class="row mt-5">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+
+                            Solicitudes</h3>
+                            
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Solicitud ID</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Fecha Solicitada</th>
+                                    <th scope="col">Desc. Resolución</th>
+                                    <th scope="col">Fecha Resolución</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let sol of solicitudes">
+                                    <td>{{sol.SOLICITUD_ASESORIA_ID}}</td>
+                                    <td>{{sol.SOLICITUD_ASESORIA_DESCRIPCION}}</td>
+                                    <td>{{sol.ESTADO_SOLICITUD_NOMBRE}}</td>
+                                    <td>{{sol.SOLICITUD_FECHA_ASESORIA | date:'dd-MM-yyyy'}}</td>
+                                    <td>{{sol.SOLICITUD_RESOLUCION}}</td>
+                                    <td>{{sol.SOLICITUD_RESOLUCION_FECHA | date:'dd-MM-yyyy'}}</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row mt-5">
+
+                   
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <table class="table">
@@ -60,8 +103,8 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
         </div>
     </section>
 </div>
