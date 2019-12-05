@@ -22,7 +22,7 @@
 
                 <div class="col-md-8">
 
-                    <form role="form" action="" #detalleCapacitacionEdit="ngForm" (ngSubmit)="pasaListaParticipantes()" *ngIf="ifDatos">
+                    <form role="form" action="" #pasarListaForm="ngForm" (ngSubmit)="pasaListaParticipantes(this)" *ngIf="ifDatos">
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
@@ -32,26 +32,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let det of detalleCapacitacion;let i = index;">
+                                    <tr *ngFor="let det of detalleCapacitacion;let in=index;">
+                                        <!-- type="text" [(ngModel)]="itemList[i]" [name]="'input-'+i" -->
+
                                         <td>
-                                            {{i}}
-                                            {{det.CAPACITACION_CORREO}}
-                                           <!-- <input type="text" disabled value={{det.CAPACITACION_PARTICIPANTE}} class="form-control"> -->
-                                           <input type="text" [(ngModel)]="detalleCapacitacionEdit[i]" value="" name="capacitacionParticipante{{i}}">
+                                            <input type="text"   [(ngModel)]="detalleCapacitacion[in].CAPACITACION_PARTICIPANTE" name="detalleCapacitacion{{in}}.participante"  class="form-control">
                                         </td>
                                         <td>
-                                                {{i}}
-                                            <input type="text" disabled value={{det.CAPACITACION_CORREO}} class="form-control">
-                                            <input hidden [(ngModel)]="detalleCapacitacionEdit[i]" class="form-control" type="text" name="detalleCapacitacionEdit[i].capacitacionCorreo" />
+                                            <input type="text"   [(ngModel)]="detalleCapacitacion[in].CAPACITACION_CORREO" name="detalleCapacitacion{{in}}.correo"  class="form-control">
                                         </td>
                                         <td>
-                                                {{i}}
-                                            <input type="checkbox" value={{det.CAPACITACION_ASISTE}} [(ngModel)]="detalleCapacitacionEdit.asiste" name="detalleCapacitacionEdit[i].asiste" class="form-control">
-                                            <input type="hidden" value={{det.CAPACITACION_DETALLE_ID}} name="" class="form-control">
-                                            <!-- <input hidden [(ngModel)]="field.correo" class="form-control" type="text" name="{{field.correo}}" /> -->
-                                        <!-- </td> -->
-                                        <td>
-                                            <button class="btn btn-danger"  type="button" (click)="deleteFieldValue(i)">-</button>
+                                            <input type="checkbox"   [(ngModel)]="detalleCapacitacion[in].CAPACITACION_ASISTE"  [checked]="detalleCapacitacion[in].CAPACITACION_ASISTE == 1" name="detalleCapacitacion{{in}}.asiste"  class="form-control">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -106,3 +97,29 @@
         </div>
     </section>
 </div>
+
+
+
+
+
+<!-- <td> -->
+    <!-- {{i}}
+    {{det.CAPACITACION_CORREO}} -->
+    <!-- <input type="text"  [(ngModel)]="detalleCapacitacionEdit[i]" name="lala" class="form-control"> -->
+   <!-- <input type="text"  [(ngModel)]="detalleCapacitacionEdit[i]" name="detalleCapacitacionEditName[i].capacitacionParticipante" class="form-control"> -->
+   <!-- <input type="text" [(ngModel)]="detalleCapacitacionEdit[i]" value="" name="capacitacionParticipante{{i}}"> -->
+<!-- </td> -->
+<!-- <td> -->
+        <!-- {{i}} -->
+    <!-- <input type="text" disabled value={{det.CAPACITACION_CORREO}}  [(ngModel)]="detalleCapacitacionEdit[i]['lala']" name="capacitacionParticipante[i]" class="form-control"> -->
+    <!-- <input hidden class="form-control" type="text" name="detalleCapacitacionEdit[i].capacitacionCorreo" /> -->
+<!-- </td> -->
+<!-- <td> -->
+        <!-- {{i}} -->
+    <!-- <input type="checkbox" value={{det.CAPACITACION_ASISTE}} [(ngModel)]="detalleCapacitacionEdit[i]" name="detalleCapacitacionEdit[i].asiste" class="form-control"> -->
+    <!-- <input type="hidden" value={{det.CAPACITACION_DETALLE_ID}} name="" class="form-control"> -->
+    <!-- <input hidden [(ngModel)]="field.correo" class="form-control" type="text" name="{{field.correo}}" /> -->
+<!-- </td> -->
+<!-- <td> -->
+    <!-- <button class="btn btn-danger"  type="button" (click)="deleteFieldValue(i)">-</button> -->
+<!-- </td> -->

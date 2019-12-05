@@ -14,20 +14,16 @@ export class CapacitacionDetalleComponent implements OnInit {
   capacitacion_id : number;
   ifDatos:boolean;
 
-  detalleCapacitacion:Array<any> = [];
-  detalleCapacitacionEdit:CapacitacionDetalle[] = [];
+  public detalleCapacitacion:Array<any> = [];
+  // public detalleCapacitacionEdit:Array<CapacitacionDetalle> = [];
   constructor(private _route: ActivatedRoute, private capService:CapacitacionDetalleService) {
     this.capacitacion_id = parseInt(this._route.snapshot.paramMap.get('id'));
 
      this.capService.getDetalleByCapacitacionId(this.capacitacion_id).subscribe(
        (data:any[]) => {
-        
-         
          if(data.length != 0){
            this.detalleCapacitacion = data;
-           console.log(this.detalleCapacitacion);
-           
-          this.ifDatos = true;
+            this.ifDatos = true;
          }else{
            this.ifDatos = false;
          }
@@ -58,27 +54,76 @@ export class CapacitacionDetalleComponent implements OnInit {
 
 
   agregarParticipantes(){
-    this.fieldArray.forEach(element => {
-      this.capacitacionDetalle = new CapacitacionDetalle(element.nombre, element.correo, 0, this.capacitacion_id);
+
+   
+    this.fieldArray.forEach(elemento => {
       
 
+      this.capacitacionDetalle = new CapacitacionDetalle(elemento.nombre, elemento.correo, 0, this.capacitacion_id);
+
+      console.log(this.capacitacionDetalle);
+
       this.capService.insertDetalleCapacitacion(this.capacitacionDetalle).subscribe(
-        data =>{
+        data => {
           
         }
       )
     });
 
-    console.log("Registros Agregados");
-    window.location.reload();
+    alert("Registros agregados");
+          window.location.reload();
+    return false;
+
+
+    // this.fieldArray.forEach(element => {
+    //   this.capacitacionDetalle = new CapacitacionDetalle(element.nombre, element.correo, 0, this.capacitacion_id)
+
+    //   this.capService.insertDetalleCapacitacion(this.capacitacionDetalle).subscribe(
+    //     data =>{
+          
+    //     }
+    //   )
+    // });
+
+    // console.log("Registros Agregados");
+    // window.location.reload();
     
   }
 
 
 
   pasaListaParticipantes(){
-    console.log(this.detalleCapacitacionEdit);
+
+    this.detalleCapacitacion.forEach(element => {
+      
+      let asiste = 0;
+      if(element.CAPACITACION_ASISTE === true || element.CAPACITACION_ASISTE == 1){
+        asiste = 1;
+      }
+
+      let detalle = new CapacitacionDetalle('', '', asiste, this.capacitacion_id);
+      
+      console.log(detalle);
+      
+      this.capService.actuclizaDetalleCapacitacion(detalle, element.CAPACITACION_DETALLE_ID).subscribe(
+        data => {
+
+        }
+      )
+
+      
+      
+    });
+
     
+      alert("Registros actualizados");
+      // window.location.reload();
+    
+    // console.log(this.capacitacionDetalle.CAPACITACION_ID);
+    
+
+
   }
 
 }
+

@@ -22,6 +22,8 @@ export class LoginComponent {
       data => {
       if( data.data.cliente === null){
         alert("Apliación Incorrecta");
+      }else if(data.data.contrato.contrato_activo == 0){
+        alert("Contrato Inactivo, contactate con el administrador.");
       }else{
         localStorage.setItem('username', data.data.usuario_username);
         localStorage.setItem('cliente', data.data.cliente.cliente_id);

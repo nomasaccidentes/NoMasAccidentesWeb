@@ -8,14 +8,14 @@ import { Contrato } from '../../contrato';
 })
 export class DashboardComponent implements OnInit {
 
-  contrato:Contrato;
+  contrato:any;
   constructor(private clienteService:ClienteService) {
 
     
     
     clienteService.getContratoByClienteId(parseInt(localStorage.getItem('cliente')))
       .subscribe(data=> {
-        console.log(data[0].CANT_ASESORIA);
+        console.log(data[0]);
         this.contrato = data[0];
       });
 
