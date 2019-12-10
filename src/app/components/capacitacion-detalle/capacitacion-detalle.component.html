@@ -13,10 +13,10 @@
                     <h4>En esta sección podrás agregar a los partcipantes de la capacitación</h4>
                     <small>* Recuerda que solo se pueden agregar 1 vez.</small>
             </div>
-           
+
 
             <br>
-          
+
             <div class="row">
                 <div class="col-md-2"></div>
 
@@ -27,7 +27,7 @@
                                 <thead>
                                     <tr>
                                         <th>Nombre Participante</th>
-                                        <th>Correo Participante</th>                                     
+                                        <th>Correo Participante</th>
                                         <th>Asiste</th>
                                     </tr>
                                 </thead>
@@ -39,7 +39,7 @@
                                             <input type="text"   [(ngModel)]="detalleCapacitacion[in].CAPACITACION_PARTICIPANTE" name="detalleCapacitacion{{in}}.participante"  class="form-control">
                                         </td>
                                         <td>
-                                            <input type="text"   [(ngModel)]="detalleCapacitacion[in].CAPACITACION_CORREO" name="detalleCapacitacion{{in}}.correo"  class="form-control">
+                                            <input type="email"   [(ngModel)]="detalleCapacitacion[in].CAPACITACION_CORREO" name="detalleCapacitacion{{in}}.correo"  class="form-control">
                                         </td>
                                         <td>
                                             <input type="checkbox"   [(ngModel)]="detalleCapacitacion[in].CAPACITACION_ASISTE"  [checked]="detalleCapacitacion[in].CAPACITACION_ASISTE == 1" name="detalleCapacitacion{{in}}.asiste"  class="form-control">
@@ -58,7 +58,7 @@
                             <thead>
                                 <tr>
                                     <th>Nombre Participante</th>
-                                    <th>Correo Participante</th>                                     
+                                    <th>Correo Participante</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -87,7 +87,7 @@
                                     </tr>
                             </tbody>
                         </table>
-                        
+
                         <div class="form-grpup">
                             <input type="submit" class="btn btn-primary" value="Agregar Participantes">
                         </div>
