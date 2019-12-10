@@ -1,15 +1,15 @@
 <div class="content-wrapper" style="min-height: 426.282px;">
     <section class="content">
         <div class="container-fluid">
-            <h3>Solicitud Asesoria</h3>
+            <h3>Solicitud Asesoria Especial</h3>
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Ingrese su solicitud</h3>
+                            <h3 class="card-title">Ingrese su solicitud de Asesoria Especial</h3>
                         </div>
-                        <form role="form" action="" #asesoriaForm="ngForm" (ngSubmit)="onSubmitAsesoria()">
+                        <form role="form" action="" #asesoriaEspecialForm="ngForm" (ngSubmit)="onSubmitAsesoria()">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Solicitud
@@ -20,9 +20,9 @@
 
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Tipo Asesorias</label>
-                                    <select name="tipoAsesoriaId" [(ngModel)]="asesoria.solicitudAsesoriaTipo" id="" class="form-control">
+                                    <select name="tipoAsesoriaId" [(ngModel)]="asesoria.solicitudAsesoriaTipoEspecial" id="" class="form-control">
                                         <option value="">- Seleccione -</option>
-                                        <option *ngFor="let item of tipoAsesoria" value="{{item.TIPO_ASESORIA_ID}}"> {{item.TIPO_ASESORIA_NOMBRE}}</option>
+                                        <option *ngFor="let item of tipoAsesoria" value="{{item.TIPO_ASESORIA_ESPECIAL_ID}}"> {{item.TIPO_ASESORIA_ESPECIAL_NOMBRE}}</option>
                                     </select>
                                 </div>
 
@@ -39,7 +39,6 @@
                     </div>
                 </div>
             </div>
-
             <br>
             <br>
             <h3>Mis Solicitudes</h3>
@@ -73,9 +72,9 @@
                             </thead>
                             <tbody>
                             <tr *ngFor="let sol of solicitudes">
-                                    <td>{{sol.SOLICITUD_ASESORIA_ID}}</td>
-                                    <td>{{sol.SOLICITUD_ASESORIA_DESCRIPCION}}</td>
-                                    <td>{{sol.TIPO_ASESORIA_NOMBRE}}</td>
+                                    <td>{{sol.SOLICITUD_ASESORIA_ESP_ID}}</td>
+                                    <td>{{sol.SOLICITUD_ASESORIA_ESP_DESC}}</td>
+                                    <td>{{sol.TIPO_ASESORIA_ESPECIAL_NOMBRE}}</td>
                                     <td>{{sol.ESTADO_SOLICITUD_NOMBRE}}</td>
                                     <td>{{sol.SOLICITUD_FECHA_ASESORIA | date:'dd-MM-yyyy'}}</td>
                                     <td>{{sol.SOLICITUD_RESOLUCION}}</td>
@@ -88,35 +87,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row mt-5">
-
-                   
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <table class="table">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">Solicitud ID</th>
-                                <th scope="col">Descripción</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Fecha Solicitada</th>
-                                <th scope="col">Desc. Resolución</th>
-                                <th scope="col">Fecha Resolución</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let sol of solicitudes">
-                                <td>{{sol.SOLICITUD_ASESORIA_ID}}</td>
-                                <td>{{sol.SOLICITUD_ASESORIA_DESCRIPCION}}</td>
-                                <td>{{sol.ESTADO_SOLICITUD_NOMBRE}}</td>
-                                <td>{{sol.SOLICITUD_FECHA_ASESORIA | date:'dd-MM-yyyy'}}</td>
-                                <td>{{sol.SOLICITUD_RESOLUCION}}</td>
-                                <td>{{sol.SOLICITUD_RESOLUCION_FECHA | date:'dd-MM-yyyy'}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div> -->
-            <!-- </div> -->
         </div>
     </section>
 </div>
+

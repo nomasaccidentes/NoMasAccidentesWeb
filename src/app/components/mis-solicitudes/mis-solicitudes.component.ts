@@ -12,13 +12,14 @@ export class MisSolicitudesComponent implements OnInit {
 
   solicitudAsesoriaDescripcion:string;
   solicitudFechaAsesoria:Date;
+  solicitudAsesoriaTipo:number;
   asesoria:any;
   cotrato_id:string;
   solicitudes:any = {};
   constructor( private _solicitudService : SolicitudService ) { 
 
     this.cotrato_id = localStorage.getItem('contrato');
-    this.asesoria = new SolicitudAsesoria(this.solicitudFechaAsesoria, this.solicitudAsesoriaDescripcion, parseInt(this.cotrato_id));
+    this.asesoria = new SolicitudAsesoria(this.solicitudFechaAsesoria, this.solicitudAsesoriaDescripcion, parseInt(this.cotrato_id), this.solicitudAsesoriaTipo);
 
     this._solicitudService.getSolicitudesByContrato(parseInt(this.cotrato_id)).subscribe(
       data=> {

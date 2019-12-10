@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SolicitudAsesoria } from "../../solicitudAsesoria";
 import { SolicitudService } from '../../services/solicitudes.service';
+import { TipoAsesoriaService } from "../../services/tipoAsesoria.service";
 
 @Component({
   selector: 'app-solicitud-asesoria',
@@ -11,18 +12,32 @@ export class SolicitudAsesoriaComponent implements OnInit {
 
   solicitudAsesoriaDescripcion:string = "";
   solicitudFechaAsesoria:Date = null;
+  solicitudAsesoriaTipo:number = 0;
   asesoria:any;
   cotrato_id:string;
   solicitudes:any = [];
-  constructor( private _solicitudService : SolicitudService ) { 
+
+  tipoAsesoria:any = {};
+  constructor( private _solicitudService : SolicitudService , private _tipoAsesoriaService: TipoAsesoriaService) { 
 
     this.cotrato_id = localStorage.getItem('contrato');
-    this.asesoria = new SolicitudAsesoria(this.solicitudFechaAsesoria, this.solicitudAsesoriaDescripcion, parseInt(this.cotrato_id));
+    this.asesoria = new SolicitudAsesoria(this.solicitudFechaAsesoria, this.solicitudAsesoriaDescripcion, parseInt(this.cotrato_id), this.solicitudAsesoriaTipo);
 
     this._solicitudService.getSolicitudesByContrato(parseInt(this.cotrato_id)).subscribe(
       data=> {
         this.solicitudes = data;
+        console.log(data);
+        
     });
+
+
+    this._tipoAsesoriaService.getTipoAsesorias().subscribe(
+      (data:any) => {
+        this.tipoAsesoria = data.data;
+        console.log(this.tipoAsesoria);
+        
+      }
+    )
   }
 
   ngOnInit() {

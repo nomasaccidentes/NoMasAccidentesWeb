@@ -10,6 +10,7 @@ import { MiContratoComponent } from "../app/components/mi-contrato/mi-contrato.c
 import { SolicitudCapacitacionComponent } from "../app/components/solicitud-capacitacion/solicitud-capacitacion.component";
 import { SolicitudAsesoriaComponent } from "../app/components/solicitud-asesoria/solicitud-asesoria.component";
 import { CapacitacionDetalleComponent } from "../app/components/capacitacion-detalle/capacitacion-detalle.component";
+import { SolicitudAsesoriaEspecialComponent } from "../app/components/solicitud-asesoria-especial/solicitud-asesoria-especial.component";
 
 export const ROUTES: Routes = [
     { path: 'login', component: LoginComponent , canActivate:[NoLoginGuard]},
@@ -19,7 +20,8 @@ export const ROUTES: Routes = [
     { path: 'asesorias', component:  AsesoriasComponent, canActivate:[LoginGuard] },
     { path: 'mi-contrato', component:  MiContratoComponent, canActivate:[LoginGuard] },
     { path: 'solicitudCapacitacion', component:  SolicitudCapacitacionComponent, canActivate:[LoginGuard] },    
-    { path: 'solicitudAsesoria', component:  SolicitudAsesoriaComponent, canActivate:[LoginGuard] },   
+    { path: 'solicitudAsesoria', component:  SolicitudAsesoriaComponent, canActivate:[LoginGuard] },
+    { path: 'solicitudAsesoriaEspecial', component:  SolicitudAsesoriaEspecialComponent, canActivate:[LoginGuard] },   
     { path: 'capacitacion/capacitacionDetalle/:id', component:  CapacitacionDetalleComponent, canActivate:[LoginGuard] },   
      
     { path: '', pathMatch: 'full', redirectTo: 'login' ,canActivate:[NoLoginGuard]},

@@ -24,6 +24,7 @@ import { MisSolicitudesComponent } from './components/mis-solicitudes/mis-solici
 import { SolicitudAsesoriaComponent } from './components/solicitud-asesoria/solicitud-asesoria.component';
 import { SolicitudCapacitacionComponent } from './components/solicitud-capacitacion/solicitud-capacitacion.component';
 import { CapacitacionDetalleComponent } from './components/capacitacion-detalle/capacitacion-detalle.component';
+import { SolicitudAsesoriaEspecialComponent } from './components/solicitud-asesoria-especial/solicitud-asesoria-especial.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { CapacitacionDetalleComponent } from './components/capacitacion-detalle/
     MisSolicitudesComponent,
     SolicitudAsesoriaComponent,
     SolicitudCapacitacionComponent,
-    CapacitacionDetalleComponent
+    CapacitacionDetalleComponent,
+    SolicitudAsesoriaEspecialComponent
   ],
   imports: [
     BrowserModule,
