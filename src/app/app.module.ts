@@ -25,6 +25,8 @@ import { SolicitudAsesoriaComponent } from './components/solicitud-asesoria/soli
 import { SolicitudCapacitacionComponent } from './components/solicitud-capacitacion/solicitud-capacitacion.component';
 import { CapacitacionDetalleComponent } from './components/capacitacion-detalle/capacitacion-detalle.component';
 import { SolicitudAsesoriaEspecialComponent } from './components/solicitud-asesoria-especial/solicitud-asesoria-especial.component';
+import { AsesoriaDetalleComponent } from './components/asesoria-detalle/asesoria-detalle.component';
+import { RegistroAccidenteComponent } from './components/registro-accidente/registro-accidente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import { SolicitudAsesoriaEspecialComponent } from './components/solicitud-aseso
     SolicitudAsesoriaComponent,
     SolicitudCapacitacionComponent,
     CapacitacionDetalleComponent,
-    SolicitudAsesoriaEspecialComponent
+    SolicitudAsesoriaEspecialComponent,
+    AsesoriaDetalleComponent,
+    RegistroAccidenteComponent
   ],
   imports: [
     BrowserModule,

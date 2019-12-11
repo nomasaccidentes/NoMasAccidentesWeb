@@ -1,1 +1,47 @@
-<p>asesorias works!</p>
+<div class="content-wrapper" style="min-height: 426.282px;">
+        <section class="content">
+            <div class="container-fluid">
+                <br>
+                <br>
+                <h3>Mis Asesorias</h3>
+            </div>
+    
+            <div class="row">
+            <div class="col-md-2">  </div>
+    
+            <div class="col-md-8">
+    
+                    <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Asesorias</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Asesoria ID</th>
+                                        <th scope="col">Detalle</th>
+                                        <th scope="col">Fecha asesoria</th>
+                                        <th scope="col">Profesional Asignado</th>
+                                        <th scope="col">Detalle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let cap of asesorias">
+                                        <td>{{cap.ASESORIA_ID}}</td>
+                                        <td>{{cap.ASESORIA_DETALLE}}</td>
+                                        <td>{{cap.ASESORIA_FECHA | date:'dd-MM-yyyy'}}</td>
+                                        <td>{{cap.PROFESIONAL_NOMBRE}}</td>
+                                        <td *ngIf="cap.ASESORIA_FINALIZADA == 1"><a routerLink="asesoriaDetalle/{{cap.ASESORIA_ID}}">Ver detalle</a></td>
+                                        <td *ngIf="cap.ASESORIA_FINALIZADA == 0">--</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    

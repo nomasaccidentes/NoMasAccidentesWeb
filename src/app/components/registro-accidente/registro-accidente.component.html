@@ -1,0 +1,67 @@
+<div class="content-wrapper" style="min-height: 426.282px;">
+        <section class="content">
+            <div class="container-fluid">
+                <br>
+                <br>
+                <h3>Ingresar Comentario</h3>
+                <div class="row">
+                    <div class="col-lg-3 col-md-12"></div>
+                    <div class=" col-lg-6 col-md-12">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Ingrese Comenrario</h3>
+                            </div>
+                            <form action="" #comentariosnForm="ngForm" (ngSubmit)="onSubmitComentarios()" role="form">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Comentario</label>
+                                        <textarea name="txtDescripcion" id="exampleInputEmail1" cols="10"  [(ngModel)]="ingresoComentario.registroAccidenteDetalleNombre" class="form-control" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Agregar Comentario</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+                <br>
+    
+                <h3></h3>
+                <div class="row mt-5">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8 col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+        
+                                    Detalle Comentarios</h3>
+                                    
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                                <th scope="col">Usuario</th>
+                                                <th scope="col">Descripcion</th>
+                                                <th scope="col">Fecha Comentario</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let cap of registroAccidente">
+                            
+                                            <td>{{cap.REGISTRO_ACCIDENTE_DET_USUARIO}}</td>
+                                            <td>{{cap.REGISTRO_ACCIDENTE_DET_NOMBRE}}</td>
+                                            <td>{{cap.REGISTRO_ACCIDENTE_DET_FECHA | date:'dd-MM-yyyy hh:mm'}}</td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+            </div>
+        </section>
+    </div>

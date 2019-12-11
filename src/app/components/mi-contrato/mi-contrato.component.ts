@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContratoService } from '../../services/contrato.service';
 
 @Component({
   selector: 'app-mi-contrato',
@@ -7,7 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiContratoComponent implements OnInit {
 
-  constructor() { }
+  detalleAsesoria:any;
+  detalleCapacitacion:any;
+  contratoId:number;
+  constructor(private _contrato:ContratoService) {
+
+    this.contratoId = parseInt(localStorage.getItem('contrato'));
+    _contrato.getAsesoriasByContratoId(this.contratoId).subscribe(
+     (data:any) =>{
+      this.detalleAsesoria = data.data;
+     }
+    );
+
+    _contrato.getCapacitacionByContratoId(this.contratoId).subscribe(
+      (data:any) =>{
+       this.detalleCapacitacion = data.data;
+       console.log(data);
+       
+      }
+     );
+   }
 
   ngOnInit() {
   }

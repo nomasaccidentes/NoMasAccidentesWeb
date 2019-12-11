@@ -21,8 +21,6 @@ export class SolicitudAsesoriaEspecialComponent implements OnInit {
     this.asesoria = new SolicitudAsesoriaEspecial(this.solicitudFechaAsesoria, this.solicitudAsesoriaEspecialDescripcion, parseInt(this.cotrato_id), this.solicitudAsesoriaTipoEspecial);
     this._tipoAsesoriaEspecial.getTipoAsesorias().subscribe(
         (data:any) => {
-          console.log(data.data);
-          
           this.tipoAsesoria = data.data;
         }
       )
@@ -30,8 +28,6 @@ export class SolicitudAsesoriaEspecialComponent implements OnInit {
     this._solicitudEspecial.getSolicitudesByContrato(parseInt(this.cotrato_id)).subscribe(
         data=> {
           this.solicitudes = data;
-          console.log(data);
-          
       });
    }
 
