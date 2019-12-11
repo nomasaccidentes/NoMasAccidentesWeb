@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -41,9 +41,9 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-    
+
                                 Solicitudes</h3>
-                                
+
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
@@ -60,15 +60,15 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let cap of capacitaciones">
-                        
+
                                         <td>{{cap.SOLICITUD_CAPACITACION_ID}}</td>
                                         <td>{{cap.SOLICITUD_CAPACITACION_DESC}}</td>
                                         <td>{{cap.SOLICITUD_FECHA_CAPACITACION | date:'dd-MM-yyyy'}}</td>
                                         <td>{{cap.ESTADO_SOLICITUD_NOMBRE}}</td>
-        
+
                                         <td>{{cap.SOLICITUD_RESOLUCION}}</td>
                                         <td>{{cap.SOLICITUD_RESOLUCION_FECHA | date:'dd-MM-yyyy'}}</td>
-                                            
+
                                     </tr>
                                 </tbody>
                                 </table>

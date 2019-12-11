@@ -30,7 +30,7 @@ export class CapacitacionDetalleComponent implements OnInit {
        }
      );
 
-    
+
 
 
    }
@@ -55,9 +55,9 @@ export class CapacitacionDetalleComponent implements OnInit {
 
   agregarParticipantes(){
 
-   
+   // let esValidoEmail = /\S+@\S+/.test(elemento.correo) Validador de email por si se desea usar, integrarlo al forEach
     this.fieldArray.forEach(elemento => {
-      
+
 
       this.capacitacionDetalle = new CapacitacionDetalle(elemento.nombre, elemento.correo, 0, this.capacitacion_id);
 
@@ -65,7 +65,7 @@ export class CapacitacionDetalleComponent implements OnInit {
 
       this.capService.insertDetalleCapacitacion(this.capacitacionDetalle).subscribe(
         data => {
-          
+
         }
       )
     });
@@ -80,14 +80,14 @@ export class CapacitacionDetalleComponent implements OnInit {
 
     //   this.capService.insertDetalleCapacitacion(this.capacitacionDetalle).subscribe(
     //     data =>{
-          
+
     //     }
     //   )
     // });
 
     // console.log("Registros Agregados");
     // window.location.reload();
-    
+
   }
 
 
@@ -95,35 +95,36 @@ export class CapacitacionDetalleComponent implements OnInit {
   pasaListaParticipantes(){
 
     this.detalleCapacitacion.forEach(element => {
-      
+
       let asiste = 0;
       if(element.CAPACITACION_ASISTE === true || element.CAPACITACION_ASISTE == 1){
         asiste = 1;
       }
 
       let detalle = new CapacitacionDetalle('', '', asiste, this.capacitacion_id);
-      
+
       console.log(detalle);
-      
+
       this.capService.actuclizaDetalleCapacitacion(detalle, element.CAPACITACION_DETALLE_ID).subscribe(
         data => {
 
         }
       )
 
-      
-      
+
+
     });
 
-    
+
       alert("Registros actualizados");
       // window.location.reload();
-    
+
     // console.log(this.capacitacionDetalle.CAPACITACION_ID);
-    
+
 
 
   }
 
-}
 
+
+}
