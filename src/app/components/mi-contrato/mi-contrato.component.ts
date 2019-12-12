@@ -10,7 +10,8 @@ export class MiContratoComponent implements OnInit {
 
   detalleAsesoria:any;
   detalleCapacitacion:any;
-  contratoId:number;
+  contratoId:any;
+  asesoriasEspecialesConfirmadas:number;
   constructor(private _contrato:ContratoService) {
 
     this.contratoId = parseInt(localStorage.getItem('contrato'));
@@ -23,10 +24,14 @@ export class MiContratoComponent implements OnInit {
     _contrato.getCapacitacionByContratoId(this.contratoId).subscribe(
       (data:any) =>{
        this.detalleCapacitacion = data.data;
-       console.log(data);
-       
       }
      );
+
+     _contrato.getAsesoriasEspecialesConfirmadas(this.contratoId).subscribe(
+       (data:any) => {
+         this.asesoriasEspecialesConfirmadas = data.data;
+       }
+     )
    }
 
   ngOnInit() {

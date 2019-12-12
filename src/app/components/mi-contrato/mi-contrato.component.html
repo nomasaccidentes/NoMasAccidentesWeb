@@ -28,11 +28,13 @@
             <p>-Con un precio de <strong>{{detalleAsesoria.VALORTOTAL}}</strong></p> <br>
 
 
-            <h4>Detalle Asesorias Especiales / HACER:</h4>
+            
+            <div *ngIf="asesoriasEspecialesConfirmadas.ASESORIAS_CONFIRMADAS != 0">
+            <h4>Detalle Asesorias Especiales </h4>
             <br>
-            <p>Actualmente has solicitado {{detalleAsesoria.CANT_ASESORIA}}</p><br>
-            <p>-Has ocupado {{detalleAsesoria.ASEOCUPADA}}</p> <br>
-            <p>-Te Quedan {{detalleAsesoria.ASEDISP}}</p> <br>
+            <p>Actualmente has solicitado {{asesoriasEspecialesConfirmadas[0].ASESORIAS_CONFIRMADAS}}</p><br>
+            </div>
+       
 
         </div>
     </section>

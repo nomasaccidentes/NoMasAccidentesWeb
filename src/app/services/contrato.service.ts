@@ -12,4 +12,9 @@ export class ContratoService {
     getCapacitacionByContratoId(contratoId:number){
         return this.http.get(`http://localhost:63382/api/contrato/GetRestanteCapacitacion/${contratoId}`);
     }
+
+    getAsesoriasEspecialesConfirmadas(contratoId:number){
+        return this.http.get(`http://localhost:63382/api/contrato/getAsesoriasEspecialesByContrato/${contratoId}`);
+    }
+
 }
