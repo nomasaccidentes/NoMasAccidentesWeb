@@ -13,7 +13,7 @@ export class SolicitudAsesoriaEspecialComponent implements OnInit {
   solicitudAsesoriaTipoEspecial:number = 0;
   asesoria:any;
   cotrato_id:string;
-  solicitudes:any = [];
+  solicitudes:any = {};
   tipoAsesoria:any = {};
   constructor(private _tipoAsesoriaEspecial:TipoAsesoriaEspecialService, private _solicitudEspecial: AsesoriaEspecialService) {
 
@@ -26,8 +26,8 @@ export class SolicitudAsesoriaEspecialComponent implements OnInit {
       )
 
     this._solicitudEspecial.getSolicitudesByContrato(parseInt(this.cotrato_id)).subscribe(
-        data=> {
-          this.solicitudes = data;
+        (data:any)=> {
+          this.solicitudes = data.data;
       });
    }
 
